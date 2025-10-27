@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -194, "left": 192, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -59.6, "left": 192, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": -40.4, "left": -268.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": 305.2, "left": 67.2, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo5", "top": 420.4, "left": 67.2, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -159.2, "left": 2.22, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 282.22, "left": -122.48, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "imu1:VCC", "esp:5V", "red", [ "v-86.4", "h0.08" ] ],
+    [ "imu1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "v19.2", "h76.54" ] ],
+    [ "pir1:OUT", "esp:23", "green", [ "v9.6", "h76.66", "v96" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v38.4", "h-48", "v230.4" ] ],
+    [ "servo3:PWM", "esp:27", "violet", [ "h-9.6", "v38.6" ] ],
+    [ "servo3:V+", "esp:5V", "red", [ "h-28.8", "v28.9" ] ],
+    [ "servo3:GND", "esp:GND.1", "black", [ "h-19.2", "v115.2" ] ],
+    [ "servo4:V+", "esp:5V", "red", [ "h-67.2", "v-163.1" ] ],
+    [ "servo5:V+", "esp:5V", "red", [ "h-67.2", "v-278.3" ] ],
+    [ "servo2:V+", "esp:5V", "red", [ "h-9.6", "v220.9", "h-172.8" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "h-9.6", "v355.3", "h-172.8" ] ],
+    [ "servo5:GND", "esp:GND.1", "black", [ "h-86.4", "v-316.8" ] ],
+    [ "servo4:GND", "esp:GND.1", "black", [ "h-86.4", "v-201.6" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h-38.4", "v172.8" ] ],
+    [ "servo2:GND", "esp:GND.2", "black", [ "h-38.4", "v38.4" ] ],
+    [ "servo5:PWM", "esp:26", "blue", [ "h-211.2", "v-374.2" ] ],
+    [ "servo4:PWM", "esp:25", "blue", [ "h-211.2", "v-95.8" ] ],
+    [ "servo2:PWM", "esp:16", "green", [ "h-28.8", "v134.6" ] ],
+    [ "servo1:PWM", "esp:17", "green", [ "h-28.8", "v249.8" ] ],
+    [ "imu1:SDA", "esp:21", "green", [ "v-38.4", "h192.08", "v-172.8" ] ],
+    [ "imu1:SCL", "esp:22", "green", [ "v-19.2", "h201.68", "v-220.8" ] ]
+  ],
+  "dependencies": {}
+}
